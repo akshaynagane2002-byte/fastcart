@@ -1,0 +1,8 @@
+{
+  "name": "fastcart",
+  "version": "1.0.0",
+  "description": "FastCart - E-commerce website: catalog, search, filters, cart, checkout, order history",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.19.2" }
+}
