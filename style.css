@@ -1,0 +1,70 @@
+:root {
+  --bg: #f6f7f4;
+  --ink: #1b2a2f;
+  --muted: #5d6d72;
+  --brand: #0f766e;
+  --brand-dark: #0b5a54;
+  --sale: #c2410c;
+  --line: #dde2dd;
+  --card: #ffffff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", system-ui, sans-serif; }
+header {
+  position: sticky; top: 0; z-index: 5; display: flex; gap: 16px; align-items: center;
+  padding: 12px 24px; background: var(--brand); color: #fff; flex-wrap: wrap;
+}
+.logo { font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -.5px; }
+header input { flex: 1; min-width: 180px; padding: 10px 14px; border-radius: 8px; border: 0; font-size: 1rem; }
+nav { display: flex; gap: 10px; align-items: center; }
+button { cursor: pointer; font: inherit; font-weight: 600; border: 0; border-radius: 8px; padding: 10px 16px; background: var(--brand); color: #fff; }
+button:hover { background: var(--brand-dark); }
+button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+button.link { background: transparent; color: #fff; }
+button.link:hover { background: rgba(255,255,255,.15); }
+.cartBtn { background: #fff; color: var(--brand); }
+.cartBtn:hover { background: #e6f4f1; }
+.cartBtn span { background: var(--sale); color: #fff; border-radius: 99px; padding: 1px 8px; margin-left: 4px; font-size: .85rem; }
+main { max-width: 1100px; margin: 0 auto; padding: 24px; }
+.view { display: none; }
+.view.active { display: block; }
+h1 { margin-top: 0; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.chip { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+.chip:hover { background: #e6f4f1; }
+.chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; }
+.card .pic { font-size: 3.4rem; background: #eef3ef; border-radius: 10px; text-align: center; padding: 18px 0; }
+.card h3 { margin: 12px 0 2px; font-size: 1.05rem; }
+.card .cat { color: var(--muted); font-size: .85rem; }
+.card p { color: var(--muted); font-size: .9rem; flex: 1; }
+.card .foot { display: flex; justify-content: space-between; align-items: center; }
+.price { font-weight: 800; font-size: 1.15rem; }
+.box { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+.cartRow { display: grid; grid-template-columns: 50px 1fr auto auto auto; gap: 14px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin-bottom: 10px; }
+.cartRow .ic { font-size: 2rem; }
+.qty { display: flex; align-items: center; gap: 8px; }
+.qty button { padding: 4px 12px; background: #e6ebe7; color: var(--ink); }
+.qty button:hover { background: #d3dcd5; }
+.rm { background: transparent; color: var(--sale); padding: 6px; }
+.rm:hover { background: #fdebe3; }
+.totals { text-align: right; margin: 16px 0; line-height: 1.8; }
+.totals .grand { font-size: 1.3rem; font-weight: 800; }
+.two { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+label { display: block; font-weight: 600; margin-bottom: 14px; }
+label input, label textarea, .row input { width: 100%; margin-top: 6px; padding: 10px; font: inherit; border: 1px solid var(--line); border-radius: 8px; }
+.row { display: flex; gap: 10px; margin-bottom: 18px; }
+.error { color: var(--sale); min-height: 1.2em; }
+.order { margin-bottom: 14px; }
+.order header { all: unset; display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 8px; flex-wrap: wrap; }
+.order li { list-style: none; color: var(--muted); }
+.order ul { padding: 0; margin: 0 0 8px; }
+.empty { color: var(--muted); padding: 30px 0; }
+.toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 8px; opacity: 0; pointer-events: none; transition: opacity .25s; }
+.toast.show { opacity: 1; }
+@media (max-width: 700px) {
+  .two { grid-template-columns: 1fr; }
+  .cartRow { grid-template-columns: 40px 1fr auto; }
+}
+@media (prefers-reduced-motion: reduce) { .toast { transition: none; } }

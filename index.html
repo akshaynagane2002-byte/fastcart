@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FastCart - Online Shop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a href="#" class="logo" id="logo">FastCart</a>
+    <input id="search" type="search" placeholder="Search products" aria-label="Search products" />
+    <nav>
+      <button class="link" id="navOrders">My orders</button>
+      <button class="cartBtn" id="navCart">Cart <span id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Shop -->
+    <section id="shop" class="view active">
+      <div id="filters" class="filters"></div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <!-- Cart -->
+    <section id="cart" class="view">
+      <h1>Your cart</h1>
+      <div id="cartItems"></div>
+    </section>
+
+    <!-- Checkout -->
+    <section id="checkout" class="view">
+      <h1>Checkout</h1>
+      <div class="two">
+        <div>
+          <label>Full name <input id="cName" /></label>
+          <label>Email <input id="cEmail" type="email" /></label>
+          <label>Delivery address <textarea id="cAddress" rows="3"></textarea></label>
+          <p id="formError" class="error" role="alert"></p>
+          <button id="placeBtn">Place order</button>
+        </div>
+        <div id="summary" class="box"></div>
+      </div>
+    </section>
+
+    <!-- Confirmation -->
+    <section id="done" class="view">
+      <h1>Order placed</h1>
+      <div id="doneBody" class="box"></div>
+      <button id="keepShopping">Continue shopping</button>
+    </section>
+
+    <!-- Orders -->
+    <section id="orders" class="view">
+      <h1>Order history</h1>
+      <div class="row">
+        <input id="oEmail" type="email" placeholder="Email used at checkout" />
+        <button id="findOrders">Show orders</button>
+      </div>
+      <div id="orderList"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
